@@ -1,20 +1,22 @@
 package logice;
 
+import java.util.Scanner;
 
-import question.java;
+import utils.utils;
 
 public class user_interface {
-Scanner in = new Scanner(System.in);
 
+    Scanner in = new Scanner(System.in);
 
-while (true) {
-    
-    in.read
+    public void Useraction() {
+        while (true) {
 
+            String userin = in.nextLine();
 
+            Boolean answer = utils.trueOrfalse(userin);
 
-}
+        }
 
-
+    }
 
 }
