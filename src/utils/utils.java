@@ -1,8 +1,8 @@
 package utils;
 
 public class utils {
-    private static String[] wft = new String[] { "ja", "true" };
-    private static String[] wff = new String[] { "falsch", "false" };
+    private static String[] wft = new String[] { "ja", "true", "j", "y" };
+    private static String[] wff = new String[] { "falsch", "false", "nein", "n" };
 
     public static Boolean trueOrfalse(String in) {
 

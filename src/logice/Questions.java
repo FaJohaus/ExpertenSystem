@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import utils.BinBaum;
 
 public class Questions {
-
+    private BinBaum bb;
     private ArrayList<Boolean> path = new ArrayList<Boolean>();
-    private BinBaum bb = new BinBaum();
+
+    public Questions(BinBaum bb) {
+        this.bb = bb;
+    }
 
     public void submitAnswer(boolean answer) {
 
@@ -16,11 +19,17 @@ public class Questions {
 
     public String getQuestions() {
 
-        return bb.get(path);
-
+        String a = bb.get(path);
+        // System.out.println("Waht: " + path);
+        return a;
     }
 
-    public void setQuestion(String question) {
+    public void setQuestion(String question, String tier) {
+
+        bb.add(question, path);
+        path.add(true);
+        bb.add(String.format("Denkst du an ein %s", tier), path);
+
     };
 
 }

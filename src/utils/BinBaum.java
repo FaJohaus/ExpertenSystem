@@ -31,7 +31,7 @@ public class BinBaum {
         }
 
         Node runner = root;
-        boolean finans = path.remove(path.size());
+        boolean finans = path.remove(path.size() - 1);
         for (Boolean p : path) {
             if (p) {
                 runner = runner.getT();
@@ -57,16 +57,41 @@ public class BinBaum {
             return root.getValue();
         }
         Node runner = root;
+        int i = 1;
 
-        boolean finans = path.remove(path.size() - 1);
-        for (Boolean p : path) {
-            if (p) {
+        while (runner != null && i < path.size()) {
+
+            if (path.get(i - 1)) {
+                System.err.println("u");
                 runner = runner.getT();
             } else {
+
                 runner = runner.getF();
+
             }
+            i++;
         }
-        return runner.getValue();
+        String temp = runner == null ? null : runner.getValue();
+
+        System.out.println(temp);
+
+        return temp;
+
+    }
+
+    public void debug() {
+        debug(root);
+    }
+
+    private void debug(Node node) {
+
+        if (node == null) {
+            return;
+        }
+
+        debug(node.getF());
+        System.out.println(node.getValue());
+        // debug(node.getT());
 
     }
 
