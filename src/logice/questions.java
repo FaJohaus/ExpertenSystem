@@ -8,6 +8,8 @@ public abstract class questions {
     private ArrayList<Boolean> questions = new ArrayList<Boolean>();
     private BinBaum bb = new BinBaum();
 
-    abstract String question(String question);
+    abstract String question(String question); 
+    abstract void setQuestion(String question);
+    
 
 }
