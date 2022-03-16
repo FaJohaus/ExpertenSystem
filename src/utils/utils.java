@@ -8,14 +8,14 @@ public class utils {
 
         boolean found = false;
         for (String string : wff) {
-            found = string.equals(in);
+            found = found || string.equalsIgnoreCase(in);
         }
         if (found) {
             return false;
         }
 
         for (String string : wft) {
-            found = string.equals(in);
+            found = found || string.equalsIgnoreCase(in);
         }
         if (found) {
             return true;

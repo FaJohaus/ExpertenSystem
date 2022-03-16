@@ -3,23 +3,21 @@ package logice;
 import java.util.ArrayList;
 import utils.BinBaum;
 
-public class questions {
+public class Questions {
 
-    private ArrayList<Boolean> questions = new ArrayList<Boolean>();
+    private ArrayList<Boolean> path = new ArrayList<Boolean>();
     private BinBaum bb = new BinBaum();
 
     public void submitAnswer(boolean answer) {
 
-        questions.add(answer);
+        path.add(answer);
 
     };
 
     public String getQuestions() {
-        
-        bb.get
-        
-        
-        return questions;
+
+        return bb.get(path);
+
     }
 
     public void setQuestion(String question) {

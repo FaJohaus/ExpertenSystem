@@ -2,10 +2,6 @@ package utils;
 
 import java.util.ArrayList;
 
-import javax.management.RuntimeErrorException;
-
-import logice.questions;
-
 /**
  * BinBaum
  */
@@ -18,6 +14,13 @@ public class BinBaum {
             return false;
         }
         return true;
+    }
+
+    public BinBaum() {
+        super();
+
+        root = new Node("Warum?");
+
     }
 
     // TODO mal gucken was das wird xd
@@ -45,14 +48,17 @@ public class BinBaum {
 
     }
 
-    public String get(ArrayList<Boolean> path) throws Exception {
+    public String get(ArrayList<Boolean> path) {
 
         if (!checkRoot()) {
-            throw new Exception("No root");
+            throw new RuntimeException("Kein Rootelement vorhanden");
         }
-
+        if (path.size() == 0) {
+            return root.getValue();
+        }
         Node runner = root;
-        boolean finans = path.remove(path.size());
+
+        boolean finans = path.remove(path.size() - 1);
         for (Boolean p : path) {
             if (p) {
                 runner = runner.getT();
@@ -60,7 +66,7 @@ public class BinBaum {
                 runner = runner.getF();
             }
         }
-        return root.getValue();
+        return runner.getValue();
 
     }
 
@@ -69,7 +75,7 @@ public class BinBaum {
 /**
  * Node
  */
-public class Node {
+class Node {
 
     private String value;
     private Node t;
